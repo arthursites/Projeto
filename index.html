@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>Walking Robot — Manual de montagem</title>
+<style>
+:root{--bg:#0b1220;--panel:#121e30;--panel2:#18283d;--text:#eef4fb;--muted:#a9b8ca;--accent:#65d6b0;--line:#2b3d53}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#0b1220,#101b2c 55%,#0b1220);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{padding:52px 20px 36px;background:radial-gradient(ellipse at 70% 0%,#28516a 0,transparent 55%);border-bottom:1px solid var(--line)}
+.wrap{max-width:1000px;margin:auto;padding:0 18px}.eyebrow{color:var(--accent);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:.75rem}
+h1{font-size:clamp(2.2rem,7vw,4.2rem);line-height:1.04;margin:12px 0}h2{font-size:1.65rem;margin:0 0 12px}h3{margin:0 0 8px}
+p{color:var(--muted)}.hero p{max-width:680px;font-size:1.08rem}.tag{display:inline-block;border:1px solid #426078;border-radius:999px;padding:5px 11px;color:#cfe6f5;font-size:.82rem;margin:5px 5px 0 0}
+nav{position:sticky;top:0;background:#0b1220ed;backdrop-filter:blur(12px);z-index:4;border-bottom:1px solid var(--line);overflow:auto;white-space:nowrap;padding:10px max(18px,calc((100% - 964px)/2))}
+nav a{color:#c8d6e5;text-decoration:none;margin-right:18px;font-size:.9rem}
+section{padding:34px 0;border-bottom:1px solid var(--line)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:17px}.material{display:flex;gap:12px;align-items:flex-start}.emoji{font-size:1.7rem}
+.step{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(250px,.9fr);gap:22px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;margin:16px 0}
+.step:nth-child(even){grid-template-columns:minmax(250px,.9fr) minmax(0,1.1fr)}.step:nth-child(even) .photo{order:2}
+.photo{width:100%;border-radius:12px;display:block;max-height:360px;object-fit:cover;background:#e7e7e7;cursor:zoom-in}
+.num{color:var(--accent);font-weight:900;font-size:.8rem;letter-spacing:.12em}.step p{margin:6px 0}
+small,.note{color:var(--muted)}.warning{border-left:4px solid #e8b65c;background:#342b1b;padding:13px 16px;border-radius:8px;color:#f5e7c8}
+.diagram{width:100%;border-radius:12px;background:white;cursor:zoom-in}
+.check{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);color:#d9e5f1}.check input{accent-color:var(--accent);width:18px;height:18px}
+button{border:0;border-radius:10px;background:var(--accent);color:#082019;font-weight:800;padding:11px 15px;cursor:pointer}
+footer{padding:30px 18px;text-align:center;color:var(--muted);font-size:.9rem}
+#lightbox{display:none;position:fixed;inset:0;background:#000e;z-index:10;align-items:center;justify-content:center;padding:20px}#lightbox img{max-width:96vw;max-height:90vh;border-radius:12px}#lightbox.show{display:flex}
+@media(max-width:680px){.step,.step:nth-child(even){grid-template-columns:1fr}.step:nth-child(even) .photo{order:0}.step{padding:12px}.hero{padding-top:36px}}
+</style></head>
+<body>
+<header class="hero"><div class="wrap"><div class="eyebrow">Projeto DIY · Robótica básica</div><h1>Walking Robot</h1><p>Construa um pequeno robô caminhante usando papelão, peças simples e um motor DC com redução. Este manual organiza a montagem mostrada no vídeo em etapas mais fáceis de acompanhar.</p><span class="tag">Guia em português</span><span class="tag">Fotos do vídeo</span><span class="tag">Nível iniciante</span></div></header>
+<nav><a href="#materiais">Materiais</a><a href="#montagem">Montagem</a><a href="#eletrica">Ligação elétrica</a><a href="#teste">Teste</a></nav>
+<main class="wrap">
+<section id="materiais"><div class="eyebrow">Antes de começar</div><h2>Materiais e ferramentas</h2><div class="grid">
+<div class="card material"><div class="emoji">🟫</div><div><b>Papelão rígido</b><p>Para a base/chassi e as peças articuladas das pernas.</p></div></div>
+<div class="card material"><div class="emoji">🪵</div><div><b>Palitos de sorvete ou varetas</b><p>Use como eixos, espaçadores e reforços, conforme o encaixe do modelo.</p></div></div>
+<div class="card material"><div class="emoji">⚙️</div><div><b>Motor DC com caixa de redução</b><p>O motor amarelo mostrado no vídeo, com eixo de saída lento.</p></div></div>
+<div class="card material"><div class="emoji">🔋</div><div><b>Porta-pilhas e 3 pilhas AA</b><p>O vídeo mostra um suporte de três pilhas. Confira a tensão nominal do motor.</p></div></div>
+<div class="card material"><div class="emoji">🔘</div><div><b>Interruptor liga/desliga</b><p>Para abrir e fechar o circuito sem retirar as pilhas.</p></div></div>
+<div class="card material"><div class="emoji">🧴</div><div><b>Cola quente e cola</b><p>Para fixar suportes e articulações. Use com supervisão de um adulto.</p></div></div>
+<div class="card material"><div class="emoji">✂️</div><div><b>Ferramentas</b><p>Régua, lápis, tesoura/estilete, furador e alicate de corte.</p></div></div>
+<div class="card material"><div class="emoji">🧵</div><div><b>Fios elétricos</b><p>Dois fios para o motor e conexões do interruptor.</p></div></div>
+</div><p class="note">As dimensões exibidas no molde do vídeo estão reproduzidas na etapa 8. Confira o tamanho das peças no seu material antes de cortar.</p></section>
+<section id="montagem"><div class="eyebrow">Construção mecânica</div><h2>Montagem passo a passo</h2>
+<div class="step"><img class="photo" src="etapa_035.jpg"><div><div class="num">ETAPA 01</div><h3>Prepare as peças de papelão</h3><p>Separe papelão firme e marque as peças que formarão o chassi e os braços articulados. O vídeo começa cortando e preparando pequenas tiras e placas.</p><p><b>Dica:</b> mantenha as peças simétricas para o robô não ficar puxando para um lado.</p></div></div>
+<div class="step"><img class="photo" src="etapa_055.jpg"><div><div class="num">ETAPA 02</div><h3>Monte a primeira articulação</h3><p>Una as tiras de papelão com pequenos pinos/eixos, deixando a junta livre para girar. Não cole as partes móveis entre si.</p><p>Faça furos alinhados e reforce a região ao redor deles para evitar que o papelão rasgue.</p></div></div>
+<div class="step"><img class="photo" src="etapa_075.jpg"><div><div class="num">ETAPA 03</div><h3>Faça os espaçadores e travessas</h3><p>Prepare pequenos tubos ou pedaços de vareta para manter distância entre as placas. Teste o movimento manualmente: a articulação deve girar sem prender.</p></div></div>
+<div class="step"><img class="photo" src="etapa_090.jpg"><div><div class="num">ETAPA 04</div><h3>Prepare o motorredutor</h3><p>Identifique o eixo de saída do motor amarelo. Ele transforma a rotação rápida do motor em um movimento mais lento e com mais força, adequado para movimentar as pernas.</p><p>Não force o eixo nem deixe cola entrar na caixa de engrenagens.</p></div></div>
+<div class="step"><img class="photo" src="etapa_115.jpg"><div><div class="num">ETAPA 05</div><h3>Adapte o acoplamento do eixo</h3><p>O vídeo mostra a preparação de uma pequena peça plástica e sua fixação ao eixo. Ela funciona como ponto de ligação para transmitir a rotação à articulação.</p><p>Centralize o acoplamento e espere a cola esfriar antes de testar.</p></div></div>
+<div class="step"><img class="photo" src="etapa_135.jpg"><div><div class="num">ETAPA 06</div><h3>Prepare a alimentação e o interruptor</h3><p>Separe o suporte de pilhas, o interruptor e os fios. Antes de instalar, confira a polaridade (+ e −) indicada no suporte.</p></div></div>
+<div class="step"><img class="photo" src="etapa_170.jpg"><div><div class="num">ETAPA 07</div><h3>Fixe os componentes na base</h3><p>Posicione o porta-pilhas e o motor sobre a placa de papelão, como no quadro. Deixe o peso distribuído e reserve espaço para o eixo e as pernas se movimentarem.</p><p>Fixe firmemente, mas sem cobrir o eixo do motor nem esmagar os fios.</p></div></div>
+<div class="step"><img class="diagram" src="etapa_280.jpg"><div><div class="num">ETAPA 08</div><h3>Recorte o molde das pernas</h3><p>O vídeo apresenta um molde com medidas. Use-o como referência para desenhar as peças no papelão:</p><ul><li>Peça longa: base de 8 cm, degrau de 1,5 cm e alturas indicadas de 1 cm e 1,5 cm.</li><li>Peça triangular: lados de 4 cm.</li><li>Peça pequena arredondada: aproximadamente 2 cm.</li></ul><p>Faça os furos nos pontos marcados no molde e repita as peças espelhadas para os dois lados.</p></div></div>
+<div class="step"><img class="photo" src="etapa_285.jpg"><div><div class="num">ETAPA 09</div><h3>Monte e alinhe as pernas</h3><p>Recorte as peças, una-as pelos furos com pequenos eixos e confira se os dois conjuntos têm o mesmo comprimento. Deixe as articulações livres.</p><p>Antes de ligar o motor, gire o mecanismo com a mão para verificar se não há colisões com a base.</p></div></div>
+</section>
+<section id="eletrica"><div class="eyebrow">Circuito</div><h2>Ligação elétrica</h2><img class="diagram" src="etapa_140.jpg" alt="Diagrama de ligação do motor, interruptor e suporte de pilhas"><p>O diagrama do vídeo mostra o interruptor em série com o motor e o suporte de pilhas: um polo do suporte vai diretamente a um terminal do motor; o outro polo passa pelo interruptor antes de chegar ao segundo terminal do motor.</p><div class="warning">⚠️ Retire as pilhas enquanto estiver montando o circuito. Evite curto-circuito entre os polos, não misture pilhas novas e usadas e não use pilhas danificadas. Se o motor aquecer, desligue imediatamente.</div></section>
+<section id="teste"><div class="eyebrow">Ajustes finais</div><h2>Teste do robô</h2><div class="grid"><div class="card"><h3>1. Teste sem carga</h3><p>Levante o robô e acione o interruptor por poucos segundos. Observe se o eixo gira sem ruídos ou travamentos.</p></div><div class="card"><h3>2. Teste no chão</h3><p>Coloque-o em uma superfície plana e observe se as pernas alternam o apoio e impulsionam a base.</p></div><div class="card"><h3>3. Corrija o alinhamento</h3><p>Se ele girar para um lado, compare o comprimento das pernas, a posição dos furos e a distribuição das pilhas.</p></div></div>
+<h2 style="margin-top:28px">Checklist de montagem</h2><div class="card" id="checks">
+<label class="check"><input type="checkbox"> Separei materiais e ferramentas</label><label class="check"><input type="checkbox"> Cortei e reforcei as peças de papelão</label><label class="check"><input type="checkbox"> Montei as articulações sem travar os eixos</label><label class="check"><input type="checkbox"> Fixei o motorredutor e o porta-pilhas</label><label class="check"><input type="checkbox"> Liguei o interruptor e conferi a polaridade</label><label class="check"><input type="checkbox"> Montei as duas pernas simetricamente</label><label class="check"><input type="checkbox"> Testei o movimento e fiz os ajustes</label><p id="progress" class="note">0 de 7 etapas concluídas</p><button onclick="resetChecks()">Reiniciar checklist</button></div>
+<p class="note">Este guia foi organizado a partir dos quadros do vídeo enviado. Algumas uniões pequenas aparecem parcialmente encobertas pelas mãos; por isso, confira o encaixe visual no vídeo original antes de colar definitivamente.</p>
+</section>
+</main><footer>Manual DIY · Walking Robot · Feito para acompanhar a montagem passo a passo</footer>
+<div id="lightbox" onclick="this.classList.remove('show')"><img alt="Imagem ampliada"></div>
+<script>
+const boxes=[...document.querySelectorAll('#checks input')],progress=document.querySelector('#progress');
+function update(){let n=boxes.filter(x=>x.checked).length;progress.textContent=`${n} de ${boxes.length} etapas concluídas`}
+boxes.forEach(x=>x.addEventListener('change',update));
+function resetChecks(){boxes.forEach(x=>x.checked=false);update()}
+document.querySelectorAll('.photo,.diagram').forEach(img=>img.addEventListener('click',()=>{let b=document.querySelector('#lightbox');b.querySelector('img').src=img.src;b.classList.add('show')}));
+</script></body></html>
